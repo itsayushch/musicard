@@ -201,21 +201,22 @@ class musicCard {
             thumbnailCanvas.height,
         );
 
-        if (this.name.length > 15) this.name = `${this.name.slice(0, 15)}...`;
-        if (this.author.length > 15) this.author = `${this.author.slice(0, 15)}...`;
+        if (this.author.length > 20) this.author = `${this.author.slice(0, 20)}...`;
+        if (this.name.length > 30) this.name = `${this.name.slice(0, 30)}...`;
 
         const image = canvas.createCanvas(1280, 450);
         const ctx = image.getContext('2d');
 
         ctx.drawImage(img, 0, 0, 1280, 450);
 
+        
         ctx.fillStyle = `#${validatedColor}`;
-        ctx.font = `75px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-        ctx.fillText(this.name, 70, 120);
+        ctx.font = `40px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+        ctx.fillText(this.name, 80, 120);
 
         ctx.fillStyle = '#b8b8b8';
-        ctx.font = `50px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-        ctx.fillText(this.author, 75, 190);
+        ctx.font = `60px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+        ctx.fillText(this.author, 70, 200);
 
         ctx.fillStyle = '#fff';
         ctx.font = '30px circular-std';
